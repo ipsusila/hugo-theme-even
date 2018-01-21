@@ -1,6 +1,8 @@
 <div class="logo-wrapper">
   <a href="{{ "/" | relURL }}" class="logo">
-    {{- if .Site.Params.logoTitle -}}
+    {{- if .Site.Params.logoHTML -}}
+      {{ .Site.Params.logoHTML | safeHTML }}
+    {{- else if .Site.Params.logoTitle -}}
       {{ .Site.Params.logoTitle }}
     {{- else -}}
       {{ .Site.Title }}
